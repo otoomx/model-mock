@@ -1,0 +1,16 @@
+<table class="table table-striped">
+    <tr>
+        <th>Deal ID</th>
+        <th>Issuer</th>
+        <th>Files</th>
+        <th>Upload Date</th>
+        <th>Status</th>
+    </tr>
+    <tr ng-repeat="deal in deals">
+        <td>{{deal.dealId}}</td>
+        <td>{{deal.issuer}}</td>
+        <td>{{deal.files}}</td>
+        <td>{{deal.uploadDate | date:'MM/dd/yyyy'}}</td>
+        <td>{{deal.status}}</td>
+    </tr>
+</table>

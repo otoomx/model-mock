@@ -1,0 +1,32 @@
+<form>
+    <div class="form-group">
+        <label for="dealId">Deal ID</label>
+        <input type="text" class="form-control" id="dealId" ng-model="dealModel.dealId" placeholder="Enter Deal ID">
+    </div>
+    <div class="form-group">
+        <label for="issuer">Issuer</label>
+        <select id="issuer" class="form-control" ng-model="dealModel.issuer">
+            <option>Foo</option>
+            <option>Far</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="cidInputFile">CDI Files</label>
+        <input type="file" id="cdiFileInput" multiple="multiple" onchange="angular.element(this).scope().loadFileDetails(this)">
+        <div class="help-block" ng-repeat="file in dealModel.cdiFiles">{{file.file.name}}
+            <tags-input ng-model="file.tags" placeholder="add grouping" on-tag-added="markTagUnavailable($tag)" on-tag-removed="putBackTag($tag)">
+                <auto-complete source="groupTags"></auto-complete>
+            </tags-input>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="additionalFileInput">Additional Files</label>
+        <input type="file" id="additionalFileInput" multiple="multiple" onchange="angular.element(this).scope().addFileDetails(this)" />
+        <div class="help-block" ng-repeat="file in dealModel.additionalFiles">{{file.name}}</div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputFile">Comments</label>
+        <textarea class="form-control" rows="3" ng-model="dealModel.comments"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
