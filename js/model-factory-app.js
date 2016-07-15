@@ -1,4 +1,4 @@
-modelApp = angular.module('ModelFactory', ['ui.bootstrap', 'ngRoute', 'ngTagsInput']);
+modelApp = angular.module('ModelFactory', ['ui.bootstrap', 'ngRoute', 'ui.router','ngTagsInput']);
 
 modelApp.config(['$locationProvider', '$routeProvider',
   function config($locationProvider, $routeProvider) {
